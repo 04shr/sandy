@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandy's Birthday Scrapbook</title>
+    <style>
+        /* Cute pet-themed color scheme */
+        :root {
+            --primary: #ff8ba7;
+            --secondary: #ffc2d1;
+            --accent: #faeee7;
+            --text: #33272a;
+            --light-purple: #c3bef0;
+            --light-blue: #a1e8cc;
+            --light-yellow: #ffffd8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', 'Comic Sans MS', sans-serif;
+        }
+        
+        body {
+            background-color: var(--accent);
+            color: var(--text);
+            overflow-x: hidden;
+            padding-bottom: 80px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            margin-bottom: 30px;
+            background-color: var(--secondary);
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cloud {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(5px);
+            opacity: 0.6;
+        }
+        
+
+        h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 48px;
+            color: white;
+            text-shadow: 3px 3px 0 var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+            transform: rotate(-2deg);
+        }
+        
+        .subtitle {
+            position: relative;
+            z-index: 2;
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+        
+        /* Tab navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            background-color: var(--light-purple);
+            color: var(--text);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-weight: 600;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Tab content */
+        .tab-content {
+            background-color: white;
+            border-radius: 30px;
+            padding: 30px;
+            display: none;
+            animation: fadeIn 0.5s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--light-purple);
+            border-radius: 10px;
+        }
+        
+        /* Welcome section */
+        .welcome-section {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .welcome-section p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        /* Gallery section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .memory-card {
+            background-color: var(--light-yellow);
+            color: var(--text);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .memory-card:nth-child(even) {
+            transform: rotate(1deg);
+            background-color: var(--light-blue);
+        }
+        
+        .memory-card:hover {
+            transform: scale(1.05) rotate(0);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .memory-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--primary);
+        }
+        
+        .memory-caption {
+            padding: 18px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        /* Stickers and decorations */
+        .sticker {
+            position: absolute;
+            z-index: 2;
+        }
+      
+        /* Music section */
+        .music-section {
+            text-align: center;
+        }
+        
+        .music-player {
+            background-color: var(--light-purple);
+            border-radius: 25px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        #current-song {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .player-btn {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .player-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .playlist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .song {
+            background-color: var(--light-yellow);
+            border-radius: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .song:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+            color: white;
+        }
+        
+        .song:hover h4 {
+            color: white;
+        }
+        
+        .song h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .song p {
+            font-size: 14px;
+        }
+        
+        /* Messages section */
+        .messages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .message-card {
+            background-color: var(--light-yellow);
+            color: var(--text);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: rotate(-1deg);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-card::before {
+            content: "❤";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 100px;
+            opacity: 0.05;
+            color: var(--primary);
+        }
+        
+        .message-card:nth-child(even) {
+            transform: rotate(1deg);
+            background-color: var(--light-blue);
+        }
+        
+        .message-card:nth-child(even)::before {
+            content: "🐾";
+        }
+        
+        .message-card:hover {
+            transform: scale(1.02) rotate(0);
+        }
+        
+        .message-author {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .message-author::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--light-purple);
+            border-radius: 10px;
+        }
+        
+        /* Friends section */
+        .character-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .character-card {
+            background-color: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 5px solid var(--light-purple);
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .character-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .character-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .character-name {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .character-name::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--light-purple);
+            border-radius: 10px;
+        }
+        
+        /* Timeline section */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 15px 40px;
+            position: relative;
+            width: 50%;
+            animation: slideIn 1s;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 3px solid var(--light-purple);
+        }
+        
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -17px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -17px;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px 0;
+            color: var(--text);
+        }
+        
+        .heart {
+            color: var(--primary);
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Interactive button */
+        .interactive-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .interactive-button:hover {
+            transform: scale(1.1) rotate(10deg);
+            background-color: var(--light-purple);
+        }
+        
+        /* Confetti styles */
+        .confetti {
+            position: fixed;
+            z-index: 100;
+            animation: confetti-fall 4s linear forwards;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        /* Pet cursor */
+        .pet-cursor {
+            pointer-events: none;
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 30px;
+        }
+        
+        /* Paw print design */
+
+        
+        .pet-emoji {
+            font-size: 100px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .speech-bubble {
+            position: absolute;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 20px;
+            max-width: 200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 10;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            border-top-color: var(--primary);
+            bottom: -29px;
+            left: 50%;
+            margin-left: -15px;
+        }
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .nav-btn {
+            background-color: var(--light-blue);
+            color: var(--text);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-weight: 600;
+        }
+        
+        .nav-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .dancing-pet {
+            font-size: 80px;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Decorations */
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Birthday Sandy!</h1>
+            <p class="subtitle">A special day filled with love and cuddles</p>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="welcome">Welcome</button>
+            <button class="tab-btn" data-tab="gallery">Memories</button>
+            <button class="tab-btn" data-tab="music">Playlist</button>
+            <button class="tab-btn" data-tab="messages">Messages</button>
+            <button class="tab-btn" data-tab="friends">Friends</button>
+            <button class="tab-btn" data-tab="timeline">Timeline</button>
+        </div>
+        
+        
+        <div class="tab-content active" id="welcome">
+            <div class="welcome-section">
+                <h2>Welcome to Sandy's Birthday Scrapbook</h2>
+                <p>To our adorable friend Sandy - Happy Birthday!</p>                
+                <p>We've created this cute digital scrapbook to celebrate all our precious memories together. Click through the tabs to explore our friendship journey!</p>
+                <p>This scrapbook is filled with all your favorite things - cute pets, music from The Weeknd and Kanye, and lots of love from your friends!</p>
+        
+                <div class="nav-buttons">
+                    <div></div>
+                    <button class="nav-btn nav-btn-next" data-next="gallery">
+                        Next: Memories <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="gallery">
+            <h2>Our Favorite Memories</h2>
+            <div class="gallery">
+                <!-- Memory cards -->
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 1" class="memory-img">
+                    <div class="memory-caption">That time we visited the pet shelter and Sandy fell in love with every single kitten!</div>
+                    
+                </div>
+                
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 2" class="memory-img">
+                    <div class="memory-caption">Beach day with our favorite animal lover!</div>
+                </div>
+                
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 3" class="memory-img">
+                    <div class="memory-caption">The Weeknd concert where Sandy knew all the lyrics!</div>
+                </div>
+                
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 4" class="memory-img">
+                    <div class="memory-caption">Study session turned dance party!</div>
+                </div>
+                
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 5" class="memory-img">
+                    <div class="memory-caption">Kanye West listening party - Sandy's favorite day!</div>
+                </div>
+                
+                <div class="memory-card">
+                    <img src="/api/placeholder/400/320" alt="Memory 6" class="memory-img">
+                    <div class="memory-caption">Our first road trip together with Sandy's puppy!</div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn nav-btn-prev" data-prev="welcome">
+                    <span>←</span> Prev: Welcome
+                </button>
+                <button class="nav-btn nav-btn-next" data-next="music">
+                    Next: Playlist <span>→</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="music">
+            <div class="music-section">
+                <h2>Sandy's Birthday Playlist</h2>
+                <p>All your favorite tunes to celebrate your special day!</p>
+                
+                <div class="music-player">
+                    <h3 id="current-song">The Weeknd - Blinding Lights</h3>
+                    <div class="player-controls">
+                        <div class="player-btn" id="prev-btn">
+                            ◀
+                        </div>
+                        <div class="player-btn" id="play-btn">
+                            ▶
+                        </div>
+                        <div class="player-btn" id="next-btn">
+                            ▶▶
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="playlist">
+                    <div class="song" data-song="The Weeknd - Blinding Lights">
+                        <h4>Blinding Lights</h4>
+                        <p>The Weeknd</p>
+                    </div>
+                    <div class="song" data-song="Kanye West - Stronger">
+                        <h4>Stronger</h4>
+                        <p>Kanye West</p>
+                    </div>
+                    <div class="song" data-song="The Weeknd - Save Your Tears">
+                        <h4>Save Your Tears</h4>
+                        <p>The Weeknd</p>
+                    </div>
+                    <div class="song" data-song="Kanye West - Gold Digger">
+                        <h4>Gold Digger</h4>
+                        <p>Kanye West</p>
+                    </div>
+                    <div class="song" data-song="The Weeknd - Starboy">
+                        <h4>Starboy</h4>
+                        <p>The Weeknd</p>
+                    </div>
+                    <div class="song" data-song="Kanye West - Heartless">
+                        <h4>Heartless</h4>
+                        <p>Kanye West</p>
+                    </div>
+                </div>
+                
+                <div style="margin: 40px 0; text-align: center;">
+                    <p style="margin-bottom: 20px; color: var(--primary);">Sandy's favorite thing is dancing to The Weeknd while playing with puppies!</p>
+                    <div id="dancingPet" class="dancing-pet">
+                        🐶
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-btn nav-btn-prev" data-prev="gallery">
+                        <span>←</span> Prev: Memories
+                    </button>
+                    <button class="nav-btn nav-btn-next" data-next="messages">
+                        Next: Messages <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="messages">
+            <h2>Birthday Messages</h2>
+            <div class="messages">
+                <div class="message-card">
+                    <p class="message-author">From Shreya (Kitty)</p>
+                    <p>Happy birthday to my favorite pet lover! Sandy, you've been the most amazing friend anyone could ask for. Your passion for animals and music makes every day brighter. Can't wait to celebrate many more birthdays together! Love you lots! 💕</p>
+                </div>
+                
+                <div class="message-card">
+                    <p class="message-author">From Jamie (Puppy)</p>
+                    <p>Sandy! Happy birthday to the coolest animal lover I know! Your energy and excitement about everything from kittens to The Weeknd makes hanging out with you an adventure. Wishing you the most PAW-some day ever! 🐾</p>
+                </div>
+                
+                <div class="message-card">
+                    <p class="message-author">From Alex (Bunny)</p>
+                    <p>Happy Birthday, Sandy! Your love for animals has always impressed me, and your taste in music is just as awesome. Thanks for always being there when I need you. May your birthday be as incredible as you are! 🐰</p>
+                </div>
+                
+                <div class="message-card">
+                    <p class="message-author">From Morgan (Hamster)</p>
+                    <p>Sandy, my pet-loving buddy! Remember that time we stayed up all night listening to Kanye and playing with kittens? That's just one of the many amazing memories we've made. Here's to many more! Happy birthday! 🎂</p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn nav-btn-prev" data-prev="music">
+                    <span>←</span> Prev: Playlist
+                </button>
+                <button class="nav-btn nav-btn-next" data-next="friends">
+                    Next: Friends <span>→</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="friends">
+            <h2>Your Furry Friends</h2>
+            <div class="character-container">
+                <div class="character-card">
+                    <img src="/api/placeholder/400/320" alt="Friend 1" class="character-img">
+                    <div class="character-info">
+                        <h3 class="character-name">Shreya (Kitty)</h3>
+                        <p>Your bestie who's always ready for a pet adventure!</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="/api/placeholder/400/320" alt="Friend 2" class="character-img">
+                    <div class="character-info">
+                        <h3 class="character-name">Jamie (Puppy)</h3>
+                        <p>Your concert buddy who loves The Weeknd as much as you do!</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="/api/placeholder/400/320" alt="Friend 3" class="character-img">
+                    <div class="character-info">
+                        <h3 class="character-name">Alex (Bunny)</h3>
+                        <p>Always calm and cuddly, just like a real bunny!</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="/api/placeholder/400/320" alt="Friend 4" class="character-img">
+                    <div class="character-info">
+                        <h3 class="character-name">Morgan (Hamster)</h3>
+                        <p>Small but mighty, your energetic Kanye-loving friend!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn nav-btn-prev" data-prev="messages">
+                    <span>←</span> Prev: Messages
+                </button>
+                <button class="nav-btn nav-btn-next" data-next="timeline">
+                    Next: Timeline <span>→</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="timeline">
+            <h2>Your Amazing Year</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>March 15, 2024</h3>
+                        <p>Your last birthday - we surprised you with a pet shelter visit!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>April 2024</h3>
+                        <p>Went to The Weeknd concert together - you sang every song!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>July 2024</h3>
+                        <p>Beach trip with all your furry friends!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>October 2024</h3>
+                        <p>Halloween party where we all dressed as your favorite animals</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>December 2024</h3>
+                        <p>Winter break road trip listening to Kanye the whole way</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>February 2025</h3>
+                        <p>Helped at the animal shelter fundraiser - you were amazing!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>March 15, 2025</h3>
+                        <p>Today! Happy Birthday Sandy! Here's to another amazing year!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn nav-btn-prev" data-prev="friends">
+                    <span>←</span> Prev: Friends
+                </button>
+                <button class="nav-btn" id="birthdayButton">
+                    Celebrate! 🎉
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with <span class="heart">❤</span></p>
+            <p>Yours Apooo & Shreyaa</p>
+        </div>
+    </div>
+    
+    <button class="interactive-button" id="confettiButton">
+        🎉
+    </button>
+    
+    <div class="pet-cursor" id="petCursor">🦖</div>
+    
+    <script>
+        // Tab navigation
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Navigation buttons
+        const navNextButtons = document.querySelectorAll('.nav-btn-next');
+        const navPrevButtons = document.querySelectorAll('.nav-btn-prev');
+        
+        navNextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const nextTabId = button.getAttribute('data-next');
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                document.querySelector(`[data-tab="${nextTabId}"]`).classList.add('active');
+                document.getElementById(nextTabId).classList.add('active');
+            });
+        });
+        
+        navPrevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const prevTabId = button.getAttribute('data-prev');
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                document.querySelector(`[data-tab="${prevTabId}"]`).classList.add('active');
+                document.getElementById(prevTabId).classList.add('active');
+            });
+        });
+        
+        // Pet cursor
+        const cursor = document.getElementById('petCursor');
+        const pets = ['🐱', '🐶', '🐰', '🐹', '🦊', '🐼'];
+        let currentPet = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        cursor.addEventListener('click', () => {
+            currentPet = (currentPet + 1) % pets.length;
+            cursor.innerHTML = pets[currentPet];
+        });
+        
+        // Confetti button
+        const confettiButton = document.getElementById('confettiButton');
+        const colors = ['#ff8ba7', '#ffc2d1', '#c3bef0', '#a1e8cc', '#ffffd8'];
+        
+        confettiButton.addEventListener('click', createConfetti);
+        
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 10 + 5;
+                const left = Math.random() * window.innerWidth;
+                
+                confetti.style.backgroundColor = color;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.left = left + 'px';
+                confetti.style.top = '-20px';
+                
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation completes
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4000);
+            }
+        }
+        
+        // Welcome pet interaction
+        const welcomePet = document.getElementById('welcomePet');
+        const speechBubble = document.getElementById('speechBubble');
+        
+        welcomePet.addEventListener('click', () => {
+            speechBubble.style.opacity = '1';
+            
+            // Play meow sound (if available)
+            const meow = new Audio('https://example.com/meow.mp3');
+            meow.play().catch(err => console.log('Audio not available'));
+            
+            // Hide speech bubble after 3 seconds
+            setTimeout(() => {
+                speechBubble.style.opacity = '0';
+            }, 3000);
+        });
+        
+        // Dancing pet
+        const dancingPet = document.getElementById('dancingPet');
+        let isDancing = false;
+        
+        dancingPet.addEventListener('click', () => {
+            if (!isDancing) {
+                isDancing = true;
+                
+                // Simple dance animation
+                dancingPet.style.animation = 'pulse 0.5s infinite';
+                
+                setTimeout(() => {
+                    dancingPet.style.animation = '';
+                    isDancing = false;
+                }, 5000);
+            }
+        });
+        
+        // Music player simulation
+        const songs = [
+            'The Weeknd - Blinding Lights',
+            'Kanye West - Stronger',
+            'The Weeknd - Save Your Tears',
+            'Kanye West - Gold Digger',
+            'The Weeknd - Starboy',
+            'Kanye West - Heartless'
+        ];
+        
+        let currentSongIndex = 0;
+        const currentSongDisplay = document.getElementById('current-song');
+        const playButton = document.getElementById('play-btn');
+        const prevButton = document.getElementById('prev-btn');
+        const nextButton = document.getElementById('next-btn');
+        const songElements = document.querySelectorAll('.song');
+        
+        let isPlaying = false;
+        
+        playButton.addEventListener('click', () => {
+            if (isPlaying) {
+                playButton.innerHTML = '▶';
+                isPlaying = false;
+            } else {
+                playButton.innerHTML = '❚❚';
+                isPlaying = true;
+            }
+        });
+        
+        prevButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            currentSongDisplay.textContent = songs[currentSongIndex];
+        });
+        
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            currentSongDisplay.textContent = songs[currentSongIndex];
+        });
+        
+        songElements.forEach((song, index) => {
+            song.addEventListener('click', () => {
+                currentSongIndex = index;
+                currentSongDisplay.textContent = songs[currentSongIndex];
+                playButton.innerHTML = '❚❚';
+                isPlaying = true;
+            });
+        });
+        
+        // Birthday celebration button
+        const birthdayButton = document.getElementById('birthdayButton');
+        
+        birthdayButton.addEventListener('click', () => {
+            createConfetti();
+            
+            const message = document.createElement('div');
+            message.style.position = 'fixed';
+            message.style.top = '50%';
+            message.style.left = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.backgroundColor = 'var(--primary)';
+            message.style.color = 'white';
+            message.style.padding = '30px';
+            message.style.borderRadius = '20px';
+            message.style.fontSize = '24px';
+            message.style.fontWeight = 'bold';
+            message.style.textAlign = 'center';
+            message.style.zIndex = '1000';
+            message.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+            message.innerHTML = `
+                <div style="font-size: 80px; margin-bottom: 20px;">🎉🎂🎁</div>
+                <div>Happy Birthday Sandy!</div>
+                <div style="font-size: 16px; margin-top: 20px;">We love you so much!</div>
+                <div style="font-size: 40px; margin-top: 20px;">🐱🐶🐰🐹</div>
+            `;
+            
+            document.body.appendChild(message);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                message.remove();
+            }, 5000);
+        });
+        
+
+    </script>
+</body>
+</html>
