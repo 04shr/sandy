@@ -49,15 +49,6 @@
             border-radius: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
-        
-        .cloud {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            filter: blur(5px);
-            opacity: 0.6;
-        }
-        
 
         h1 {
             position: relative;
@@ -209,95 +200,6 @@
             font-weight: 600;
         }
         
-        /* Stickers and decorations */
-        .sticker {
-            position: absolute;
-            z-index: 2;
-        }
-      
-        /* Music section */
-        .music-section {
-            text-align: center;
-        }
-        
-        .music-player {
-            background-color: var(--light-purple);
-            border-radius: 25px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        #current-song {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .player-controls {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        
-        .player-btn {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .player-btn:hover {
-            transform: scale(1.1);
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .playlist {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .song {
-            background-color: var(--light-yellow);
-            border-radius: 20px;
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .song:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px);
-            color: white;
-        }
-        
-        .song:hover h4 {
-            color: white;
-        }
-        
-        .song h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        .song p {
-            font-size: 14px;
-        }
-        
         /* Messages section */
         .messages {
             display: grid;
@@ -360,232 +262,6 @@
             border-radius: 10px;
         }
         
-        /* Friends section */
-        .character-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .character-card {
-            background-color: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border: 5px solid var(--light-purple);
-        }
-        
-        .character-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .character-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .character-info {
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .character-name {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .character-name::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--light-purple);
-            border-radius: 10px;
-        }
-        
-        /* Timeline section */
-        .timeline {
-            position: relative;
-            max-width: 700px;
-            margin: 40px auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            padding: 15px 40px;
-            position: relative;
-            width: 50%;
-            animation: slideIn 1s;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            position: relative;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border: 3px solid var(--light-purple);
-        }
-        
-        .timeline-content:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: white;
-            border: 4px solid var(--primary);
-            top: 20px;
-            border-radius: 50%;
-            z-index: 1;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -17px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -17px;
-        }
-        
-        .timeline-content h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        
-        /* Footer styles */
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 20px 0;
-            color: var(--text);
-        }
-        
-        .heart {
-            color: var(--primary);
-            display: inline-block;
-            animation: pulse 1.5s infinite;
-        }
-        
-        /* Interactive button */
-        .interactive-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-            z-index: 100;
-        }
-        
-        .interactive-button:hover {
-            transform: scale(1.1) rotate(10deg);
-            background-color: var(--light-purple);
-        }
-        
-        /* Confetti styles */
-        .confetti {
-            position: fixed;
-            z-index: 100;
-            animation: confetti-fall 4s linear forwards;
-            border-radius: 8px;
-            pointer-events: none;
-        }
-        
-        /* Pet cursor */
-        .pet-cursor {
-            pointer-events: none;
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-            font-size: 30px;
-        }
-        
-        /* Paw print design */
-
-        
-        .pet-emoji {
-            font-size: 100px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        
-        .speech-bubble {
-            position: absolute;
-            background-color: var(--primary);
-            color: white;
-            padding: 15px;
-            border-radius: 20px;
-            max-width: 200px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            opacity: 0;
-            transition: opacity 0.5s;
-            z-index: 10;
-            top: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .speech-bubble::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border: 15px solid transparent;
-            border-top-color: var(--primary);
-            bottom: -29px;
-            left: 50%;
-            margin-left: -15px;
-        }
-        
         /* Navigation buttons */
         .nav-buttons {
             display: flex;
@@ -615,25 +291,7 @@
             color: white;
         }
         
-        .dancing-pet {
-            font-size: 80px;
-            display: inline-block;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
         /* Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes confetti-fall {
-            0% { transform: translateY(-100vh) rotate(0deg); }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -644,8 +302,130 @@
             to { opacity: 1; transform: translateX(0); }
         }
         
-        /* Decorations */
-   
+        /* Movie Player */
+        .movie-player {
+            background-color: var(--light-purple);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie-title {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .video-container {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+
+        #videoPlayer {
+            width: 100%;
+            display: block;
+        }
+
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .video-btn {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-weight: 600;
+        }
+
+        .video-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .video-playlist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .video-thumbnail {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .video-name {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        /* Pet cursor */
+        .pet-cursor {
+            pointer-events: none;
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -658,19 +438,17 @@
         <div class="nav-tabs">
             <button class="tab-btn active" data-tab="welcome">Welcome</button>
             <button class="tab-btn" data-tab="gallery">Memories</button>
-            <button class="tab-btn" data-tab="music">Playlist</button>
             <button class="tab-btn" data-tab="messages">Messages</button>
-            <button class="tab-btn" data-tab="friends">Friends</button>
-            <button class="tab-btn" data-tab="timeline">Timeline</button>
+            <button class="tab-btn" data-tab="movie">Movie Player</button>
         </div>
-        
         
         <div class="tab-content active" id="welcome">
             <div class="welcome-section">
                 <h2>Welcome to Sandy's Birthday Scrapbook</h2>
-                <p>To our adorable friend Sandy - Happy Birthday!</p>                
+                <p>Happy Birthday Sandyyyyy!</p>                
                 <p>We've created this cute digital scrapbook to celebrate all our precious memories together. Click through the tabs to explore our friendship journey!</p>
-                <p>This scrapbook is filled with all your favorite things - cute pets, music from The Weeknd and Kanye, and lots of love from your friends!</p>
+                <p>This scrapbook is filled with all your favorite things - cute pets, music, and lots of love from your friends!</p>
+                <p>Check out our beautiful memories gallery and the Movie Player where you can watch your favorite clips!</p>
         
                 <div class="nav-buttons">
                     <div></div>
@@ -688,7 +466,6 @@
                 <div class="memory-card">
                     <img src="images/IMG-20241029-WA0038.jpg" alt="Memory 1" class="memory-img">
                     <div class="memory-caption">Ear-pods dayy</div>
-                    
                 </div>
                 
                 <div class="memory-card">
@@ -715,90 +492,15 @@
                     <img src="images/IMG-20250205-WA0026.jpg" alt="Memory 6" class="memory-img">
                     <div class="memory-caption">Cubbon park</div>
                 </div>
-
-                <div class="memory-card">
-                    <img src="images/IMG-20250205-WA0136.jpg" alt="Memory 6" class="memory-img">
-                    <div class="memory-caption">Big hugsss Num 1</div>
-                </div>
-
-                <div class="memory-card">
-                    <img src="images/Snapchat-325102431.jpg" alt="Memory 6" class="memory-img">
-                    <div class="memory-caption">Big hugsss Num 1</div>
-                </div>
             </div>
             
             <div class="nav-buttons">
                 <button class="nav-btn nav-btn-prev" data-prev="welcome">
                     <span>←</span> Prev: Welcome
                 </button>
-                <button class="nav-btn nav-btn-next" data-next="music">
-                    Next: Playlist <span>→</span>
+                <button class="nav-btn nav-btn-next" data-next="messages">
+                    Next: Messages <span>→</span>
                 </button>
-            </div>
-        </div>
-        
-        <div class="tab-content" id="music">
-            <div class="music-section">
-                <h2>Sandy's Birthday Playlist</h2>
-                <p>All your favorite tunes to celebrate your special day!</p>
-                
-                <div class="music-player">
-                    <h3 id="current-song">The Weeknd - Blinding Lights</h3>
-                    <div class="player-controls">
-                        <div class="player-btn" id="prev-btn">
-                            ◀
-                        </div>
-                        <div class="player-btn" id="play-btn">
-                            ▶
-                        </div>
-                        <div class="player-btn" id="next-btn">
-                            ▶▶
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="playlist">
-                    <div class="song" data-index="0">
-                        <h4>Blinding Lights</h4>
-                        <p>The Weeknd</p>
-                    </div>
-                    <div class="song" data-index="1">
-                        <h4>Stronger</h4>
-                        <p>Kanye West</p>
-                    </div>
-                    <div class="song" data-index="2">
-                        <h4>Save Your Tears</h4>
-                        <p>The Weeknd</p>
-                    </div>
-                    <div class="song" data-index="3">
-                        <h4>Gold Digger</h4>
-                        <p>Kanye West</p>
-                    </div>
-                    <div class="song" data-index="4">
-                        <h4>Starboy</h4>
-                        <p>The Weeknd</p>
-                    </div>
-                    <div class="song" data-index="5">
-                        <h4>Heartless</h4>
-                        <p>Kanye West</p>
-                    </div>
-                </div>
-                
-                <div style="margin: 40px 0; text-align: center;">
-                    <p style="margin-bottom: 20px; color: var(--primary);">Sandy's favorite thing is dancing to The Weeknd while playing with puppies!</p>
-                    <div id="dancingPet" class="dancing-pet">
-                        🐶
-                    </div>
-                </div>
-                
-                <div class="nav-buttons">
-                    <button class="nav-btn nav-btn-prev" data-prev="gallery">
-                        <span>←</span> Prev: Memories
-                    </button>
-                    <button class="nav-btn nav-btn-next" data-next="messages">
-                        Next: Messages <span>→</span>
-                    </button>
-                </div>
             </div>
         </div>
         
@@ -806,68 +508,98 @@
             <h2>Birthday Messages</h2>
             <div class="messages">
                 <div class="message-card">
-                    <p class="message-author">From Shreya (Kitty)</p>
-                    <p>Happy birthday to my favorite pet lover! Sandy, you've been the most amazing friend anyone could ask for. Your passion for animals and music makes every day brighter. Can't wait to celebrate many more birthdays together! Love you lots! 💕</p>
+                    <p class="message-author">From Shreyaaa</p>
+                    <p>Happy Birthday Sandyy!! May God bless you with good health and happiness. I dont even know where to start, Godd you are a wonderfull human (I wish everyone could see that and value you) and seeing you turn out to be this wonderful woman has been an amazing journey. You add so much value into my life and your presence matters so much to me. I love you so muchh girl and please know my life is bearable because you are a part of it. Im always there for you. ILY3000</p>
                 </div>
                 
                 <div class="message-card">
-                    <p class="message-author">From Jamie (Puppy)</p>
-                    <p>Sandy! Happy birthday to the coolest animal lover I know! Your energy and excitement about everything from kittens to The Weeknd makes hanging out with you an adventure. Wishing you the most PAW-some day ever! 🐾</p>
+                    <p class="message-author">From Apoorvaa</p>
                 </div>
                 
                 <div class="message-card">
-                    <p class="message-author">From Alex (Bunny)</p>
+                    <p class="message-author">From Akshayaa</p>
                     <p>Happy Birthday, Sandy! Your love for animals has always impressed me, and your taste in music is just as awesome. Thanks for always being there when I need you. May your birthday be as incredible as you are! 🐰</p>
                 </div>
                 
                 <div class="message-card">
-                    <p class="message-author">From Morgan (Hamster)</p>
+                    <p class="message-author">From Indraa</p>
+                    <p>Sandy, my pet-loving buddy! Remember that time we stayed up all night listening to Kanye and playing with kittens? That's just one of the many amazing memories we've made. Here's to many more! Happy birthday! 🎂</p>
+                </div>
+
+                <div class="message-card">
+                    <p class="message-author">From Appa</p>
+                    <p>Sandy, my pet-loving buddy! Remember that time we stayed up all night listening to Kanye and playing with kittens? That's just one of the many amazing memories we've made. Here's to many more! Happy birthday! 🎂</p>
+                </div>
+
+                <div class="message-card">
+                    <p class="message-author">From Amma</p>
+                    <p>Sandy, my pet-loving buddy! Remember that time we stayed up all night listening to Kanye and playing with kittens? That's just one of the many amazing memories we've made. Here's to many more! Happy birthday! 🎂</p>
+                </div>
+
+                <div class="message-card">
+                    <p class="message-author">From Sri</p>
                     <p>Sandy, my pet-loving buddy! Remember that time we stayed up all night listening to Kanye and playing with kittens? That's just one of the many amazing memories we've made. Here's to many more! Happy birthday! 🎂</p>
                 </div>
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn nav-btn-prev" data-prev="music">
-                    <span>←</span> Prev: Playlist
+                <button class="nav-btn nav-btn-prev" data-prev="gallery">
+                    <span>←</span> Prev: Memories
                 </button>
-                <button class="nav-btn nav-btn-next" data-next="friends">
-                    Next: Friends <span>→</span>
+                <button class="nav-btn nav-btn-next" data-next="movie">
+                    Next: Movie Player <span>→</span>
                 </button>
             </div>
         </div>
         
-        <div class="tab-content" id="friends">
-            <h2>Your Furry Friends</h2>
-            <div class="character-container">
-                <div class="character-card">
-                    <img src="/api/placeholder/400/320" alt="Friend 1" class="character-img">
-                    <div class="character-info">
-                        <h3 class="character-name">Shreya (Kitty)</h3>
-                        <p>Your bestie who's always ready for a pet adventure!</p>
-                    </div>
+        <div class="tab-content" id="movie">
+            <h2>Cute Movie Player</h2>
+            
+            <div class="movie-player">
+                <h3 class="movie-title">Watch Sandy's Favorite Videos</h3>
+                
+                <div class="video-container">
+                    <video id="videoPlayer" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 
-                <div class="character-card">
-                    <img src="/api/placeholder/400/320" alt="Friend 2" class="character-img">
-                    <div class="character-info">
-                        <h3 class="character-name">Jamie (Puppy)</h3>
-                        <p>Your concert buddy who loves The Weeknd as much as you do!</p>
-                    </div>
+                <div class="video-controls">
+                    <button class="video-btn" id="playBtn">Play</button>
+                    <button class="video-btn" id="pauseBtn">Pause</button>
+                    <button class="video-btn" id="fullscreenBtn">Fullscreen</button>
                 </div>
                 
-                <div class="character-card">
-                    <img src="/api/placeholder/400/320" alt="Friend 3" class="character-img">
-                    <div class="character-info">
-                        <h3 class="character-name">Alex (Bunny)</h3>
-                        <p>Always calm and cuddly, just like a real bunny!</p>
+                <div class="video-playlist">
+                    <div class="video-thumbnail" data-video="images/blue.mp4">
+                        <img src="images/IMG-20250117-WA0061.jpg" alt="Cuteness Overload">
+                        <div class="play-icon">▶</div>
+                        <div class="video-name">Birthday Memories</div>
                     </div>
-                </div>
-                
-                <div class="character-card">
-                    <img src="/api/placeholder/400/320" alt="Friend 4" class="character-img">
-                    <div class="character-info">
-                        <h3 class="character-name">Morgan (Hamster)</h3>
-                        <p>Small but mighty, your energetic Kanye-loving friend!</p>
+                    
+                    <div class="video-thumbnail" data-video="images/cute.mp4">
+                        <img src="images/IMG-20250117-WA0183.jpg" alt="Therapy">
+                        <div class="play-icon">▶</div>
+                        <div class="video-name">Sandy & Pets</div>
+                    </div>
+                    
+                    <div class="video-thumbnail" data-video="images/hugs.mp4">
+                        <img src="images/IMG-20241029-WA0038.jpg" alt="Charms & Cheers">
+                        <div class="play-icon">▶</div>
+                        <div class="video-name">Music Time</div>
+                    </div>
+                    
+                    <div class="video-thumbnail" data-video="images/ss.mp4">
+                        <img src="images/IMG-20250205-WA0026.jpg" alt="Cuties">
+                        <div class="play-icon">▶</div>
+                        <div class="video-name">Friends Forever</div>
+                    </div>
+
+                    <div class="video-thumbnail" data-video="images/laughs.mp4">
+                        <img src="images/IMG-20250117-WA0270.jpg" alt="Cuties">
+                        <div class="play-icon">▶</div>
+                        <div class="video-name">Belly Laughs</div>
                     </div>
                 </div>
             </div>
@@ -876,401 +608,118 @@
                 <button class="nav-btn nav-btn-prev" data-prev="messages">
                     <span>←</span> Prev: Messages
                 </button>
-                <button class="nav-btn nav-btn-next" data-next="timeline">
-                    Next: Timeline <span>→</span>
+                <button class="nav-btn nav-btn-next" data-next="welcome">
+                    Back to Welcome <span>→</span>
                 </button>
             </div>
-        </div>
-        
-        <div class="tab-content" id="timeline">
-            <h2>Your Amazing Year</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>March 15, 2024</h3>
-                        <p>Your last birthday - we surprised you with a pet shelter visit!</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>April 2024</h3>
-                        <p>Went to The Weeknd concert together - you sang every song!</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>July 2024</h3>
-                        <p>Beach trip with all your furry friends!</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>October 2024</h3>
-                        <p>Halloween party where we all dressed as your favorite animals</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>December 2024</h3>
-                        <p>Winter break road trip listening to Kanye the whole way</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>February 2025</h3>
-                        <p>Helped at the animal shelter fundraiser - you were amazing!</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>March 15, 2025</h3>
-                        <p>Today! Happy Birthday Sandy! Here's to another amazing year!</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="nav-buttons">
-                <button class="nav-btn nav-btn-prev" data-prev="friends">
-                    <span>←</span> Prev: Friends
-                </button>
-                <button class="nav-btn" id="birthdayButton">
-                    Celebrate! 🎉
-                </button>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>Made with <span class="heart">❤</span></p>
-            <p>Yours Apooo & Shreyaa</p>
         </div>
     </div>
-    
-    <button class="interactive-button" id="confettiButton">
-        🎉
-    </button>
     
     <div class="pet-cursor" id="petCursor">🦖</div>
     
     <script>
         // Tab navigation
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                button.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Navigation buttons
-        const navNextButtons = document.querySelectorAll('.nav-btn-next');
-        const navPrevButtons = document.querySelectorAll('.nav-btn-prev');
-        
-        navNextButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const nextTabId = button.getAttribute('data-next');
-                
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                document.querySelector(`[data-tab="${nextTabId}"]`).classList.add('active');
-                document.getElementById(nextTabId).classList.add('active');
-            });
-        });
-        
-        navPrevButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const prevTabId = button.getAttribute('data-prev');
-                
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                document.querySelector(`[data-tab="${prevTabId}"]`).classList.add('active');
-                document.getElementById(prevTabId).classList.add('active');
-            });
-        });
-        
-        // Pet cursor
-        const cursor = document.getElementById('petCursor');
-        const pets = ['🐱', '🐶', '🐰', '🐹', '🦊', '🐼'];
-        let currentPet = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        
-        cursor.addEventListener('click', () => {
-            currentPet = (currentPet + 1) % pets.length;
-            cursor.innerHTML = pets[currentPet];
-        });
-        
-        // Confetti button
-        const confettiButton = document.getElementById('confettiButton');
-        const colors = ['#ff8ba7', '#ffc2d1', '#c3bef0', '#a1e8cc', '#ffffd8'];
-        
-        confettiButton.addEventListener('click', createConfetti);
-        
-        function createConfetti() {
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const size = Math.random() * 10 + 5;
-                const left = Math.random() * window.innerWidth;
-                
-                confetti.style.backgroundColor = color;
-                confetti.style.width = size + 'px';
-                confetti.style.height = size + 'px';
-                confetti.style.left = left + 'px';
-                confetti.style.top = '-20px';
-                
-                document.body.appendChild(confetti);
-                
-                // Remove confetti after animation completes
-                setTimeout(() => {
-                    confetti.remove();
-                }, 4000);
-            }
-        }
-        
-        // Welcome pet interaction
-        const welcomePet = document.getElementById('welcomePet');
-        const speechBubble = document.getElementById('speechBubble');
-        
-        welcomePet.addEventListener('click', () => {
-            speechBubble.style.opacity = '1';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab navigation
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
             
-            // Play meow sound (if available)
-            const meow = new Audio('https://example.com/meow.mp3');
-            meow.play().catch(err => console.log('Audio not available'));
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
             
-            // Hide speech bubble after 3 seconds
-            setTimeout(() => {
-                speechBubble.style.opacity = '0';
-            }, 3000);
-        });
-        
-        // Dancing pet
-        const dancingPet = document.getElementById('dancingPet');
-        let isDancing = false;
-        
-        dancingPet.addEventListener('click', () => {
-            if (!isDancing) {
-                isDancing = true;
-                
-                // Simple dance animation
-                dancingPet.style.animation = 'pulse 0.5s infinite';
-                
-                setTimeout(() => {
-                    dancingPet.style.animation = '';
-                    isDancing = false;
-                }, 5000);
+            // Navigation buttons
+            const navNextButtons = document.querySelectorAll('.nav-btn-next');
+            const navPrevButtons = document.querySelectorAll('.nav-btn-prev');
+            
+            navNextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const nextTabId = button.getAttribute('data-next');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    document.querySelector(`[data-tab="${nextTabId}"]`).classList.add('active');
+                    document.getElementById(nextTabId).classList.add('active');
+                });
+            });
+            
+            navPrevButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const prevTabId = button.getAttribute('data-prev');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    document.querySelector(`[data-tab="${prevTabId}"]`).classList.add('active');
+                    document.getElementById(prevTabId).classList.add('active');
+                });
+            });
+            
+            // Pet cursor
+            const petCursor = document.getElementById('petCursor');
+            const petEmojis = ['🐱', '🐶', '🐰', '🐹', '🦊', '🐼'];
+            let currentPetIndex = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                petCursor.style.left = e.clientX + 'px';
+                petCursor.style.top = e.clientY + 'px';
+            });
+            
+            petCursor.addEventListener('click', () => {
+                currentPetIndex = (currentPetIndex + 1) % petEmojis.length;
+                petCursor.textContent = petEmojis[currentPetIndex];
+            });
+            
+            // Movie player functionality
+            const videoPlayer = document.getElementById('videoPlayer');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            
+            videoThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const videoSrc = thumbnail.getAttribute('data-video');
+                    videoPlayer.src = videoSrc;
+                    videoPlayer.load();
+                    videoPlayer.play();
+                });
+            });
+            
+            playBtn.addEventListener('click', () => {
+                videoPlayer.play();
+            });
+            
+            pauseBtn.addEventListener('click', () => {
+                videoPlayer.pause();
+            });
+            
+            fullscreenBtn.addEventListener('click', () => {
+                if (videoPlayer.requestFullscreen) {
+                    videoPlayer.requestFullscreen();
+                } else if (videoPlayer.webkitRequestFullscreen) {
+                    videoPlayer.webkitRequestFullscreen();
+                } else if (videoPlayer.msRequestFullscreen) {
+                    videoPlayer.msRequestFullscreen();
+                }
+            });
+            
+            // Load first video by default
+            if (videoThumbnails.length > 0) {
+                const firstVideoSrc = videoThumbnails[0].getAttribute('data-video');
+                videoPlayer.src = firstVideoSrc;
+                videoPlayer.load();
             }
         });
-        
-        // Music player simulation
- // Music player simulation
- const songs = [
-    { title: 'Blinding Lights', artist: 'The Weeknd', file: 'music/blinding lights.mp3' },
-    { title: 'Stronger', artist: 'Kanye West', file: 'music/stronger.mp3' },
-    { title: 'Save Your Tears', artist: 'The Weeknd', file: 'music/save_your_tears.mp3' },
-    { title: 'Gold Digger', artist: 'Kanye West', file: 'music/gold_digger.mp3' },
-    { title: 'Starboy', artist: 'The Weeknd', file: 'music/starboy.mp3' },
-    { title: 'Heartless', artist: 'Kanye West', file: 'music/heartless.mp3' }
-];
-
-let currentSongIndex = 0;
-const currentSongDisplay = document.getElementById('current-song');
-const playButton = document.getElementById('play-btn');
-const prevButton = document.getElementById('prev-btn');
-const nextButton = document.getElementById('next-btn');
-const songElements = document.querySelectorAll('.song');
-const audioPlayer = new Audio();
-
-function loadSong(index) {
-    const song = songs[index];
-    audioPlayer.src = song.file; // Set the correct file source
-    currentSongDisplay.textContent = `${song.artist} - ${song.title}`;
-    
-    // Highlight selected song
-    songElements.forEach((el, i) => {
-        el.style.backgroundColor = i === index ? 'var(--primary)' : '';
-        el.style.color = i === index ? 'white' : '';
-    });
-}
-
-playButton.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play().catch(err => console.error("Error playing audio:", err));
-        playButton.innerHTML = '❚❚'; // Pause symbol
-    } else {
-        audioPlayer.pause();
-        playButton.innerHTML = '▶'; // Play symbol
-    }
-});
-
-prevButton.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    loadSong(currentSongIndex);
-    audioPlayer.play();
-});
-
-nextButton.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(currentSongIndex);
-    audioPlayer.play();
-});
-
-// Click to play a specific song
-songElements.forEach((songElement, index) => {
-    songElement.addEventListener('click', () => {
-        currentSongIndex = index;
-        loadSong(currentSongIndex);
-        audioPlayer.play();
-    });
-});
-
-// Auto-play next song when current ends
-audioPlayer.addEventListener('ended', () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(currentSongIndex);
-    audioPlayer.play();
-});
-
-// Load the first song initially
-loadSong(currentSongIndex);
-
-
-// Play/Pause button
-playButton.addEventListener('click', () => {
-    if (isPlaying) {
-        audioPlayer.pause();
-        playButton.innerHTML = '▶';
-        isPlaying = false;
-    } else {
-        // Simulate playing music since files might be missing
-        playButton.innerHTML = '❚❚';
-        isPlaying = true;
-        
-        // Show a message instead of trying to play missing files
-        alert("🎵 Playing: " + songs[currentSongIndex].artist + " - " + songs[currentSongIndex].title);
-        
-        // Automatically "pause" after a few seconds to simulate a short song
-        setTimeout(() => {
-            if (isPlaying) {
-                playButton.innerHTML = '▶';
-                isPlaying = false;
-                // Move to next song as if this one finished
-                currentSongIndex = (currentSongIndex + 1) % songs.length;
-                loadSong(currentSongIndex);
-            }
-        }, 10000); // Simulate 10-second songs
-    }
-});
-
-// Previous button
-prevButton.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    loadSong(currentSongIndex);
-    
-    if (isPlaying) {
-        const playPromise = audioPlayer.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(e => console.error("Couldn't play audio:", e));
-        }
-    }
-});
-
-// Next button
-nextButton.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(currentSongIndex);
-    
-    if (isPlaying) {
-        const playPromise = audioPlayer.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(e => console.error("Couldn't play audio:", e));
-        }
-    }
-});
-
-// Play specific song when clicked in the playlist
-songElements.forEach((songElement, index) => {
-    songElement.addEventListener('click', () => {
-        currentSongIndex = index;
-        loadSong(currentSongIndex);
-        
-        // Start playing automatically when a song is selected
-        const playPromise = audioPlayer.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                playButton.innerHTML = '❚❚';
-                isPlaying = true;
-            }).catch(e => console.error("Couldn't play audio:", e));
-        }
-    });
-});
-
-// Handle song ending - play next song
-audioPlayer.addEventListener('ended', () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(currentSongIndex);
-    const playPromise = audioPlayer.play();
-    if (playPromise !== undefined) {
-        playPromise.catch(e => console.error("Couldn't play next song:", e));
-    }
-});
-
-        // Birthday celebration button
-        const birthdayButton = document.getElementById('birthdayButton');
-        
-        birthdayButton.addEventListener('click', () => {
-            createConfetti();
-            
-            const message = document.createElement('div');
-            message.style.position = 'fixed';
-            message.style.top = '50%';
-            message.style.left = '50%';
-            message.style.transform = 'translate(-50%, -50%)';
-            message.style.backgroundColor = 'var(--primary)';
-            message.style.color = 'white';
-            message.style.padding = '30px';
-            message.style.borderRadius = '20px';
-            message.style.fontSize = '24px';
-            message.style.fontWeight = 'bold';
-            message.style.textAlign = 'center';
-            message.style.zIndex = '1000';
-            message.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
-            message.innerHTML = `
-                <div style="font-size: 80px; margin-bottom: 20px;">🎉🎂🎁</div>
-                <div>Happy Birthday Sandy!</div>
-                <div style="font-size: 16px; margin-top: 20px;">We love you so much!</div>
-                <div style="font-size: 40px; margin-top: 20px;">🐱🐶🐰🐹</div>
-            `;
-            
-            document.body.appendChild(message);
-            
-            // Remove message after 5 seconds
-            setTimeout(() => {
-                message.remove();
-            }, 5000);
-        });
-        
-
     </script>
 </body>
 </html>
